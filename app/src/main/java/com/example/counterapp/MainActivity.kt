@@ -3,9 +3,11 @@ package com.example.counterapp
 //import androidx.compose.foundation.layout.FlowRowScopeInstance.weight
 
 import android.annotation.SuppressLint
+import android.media.Image
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,6 +34,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -114,9 +117,9 @@ class MainActivity : ComponentActivity() {
         ) {
             Text(text = questions[currentQuestionIndex], fontSize = 20.sp)
             if (showWrongAnswer)
-                AnswerResult(text = "Wrong Answer", color = Color.Red)
+                AnswerResult(text = "Wrong Answer", image = R.drawable.w)
             if (showCorrectAnswer)
-                AnswerResult(text = "Correct Answer", color = Color.Green)
+                AnswerResult(text = "Correct Answer", image = R.drawable.c)
 
             Text(text = "Score: $score", fontSize = 20.sp)
             if (showNextQuestion)
@@ -131,6 +134,7 @@ class MainActivity : ComponentActivity() {
                         showNextAnswersRow = true
                         showCorrectAnswer = false
                         showWrongAnswer = false
+
                     }) {
                     Text(text = "Next Question")
                 }
@@ -194,13 +198,13 @@ class MainActivity : ComponentActivity() {
 
     @Composable
 
-    fun AnswerResult(text: String, color: Color, modifier: Modifier = Modifier) {
+    fun AnswerResult(text: String, image: Int, modifier: Modifier = Modifier) {
         Box(
             modifier = modifier
                 .size(200.dp)
-                .clip(CircleShape)
-                .background(color)
+
         ) {
+            Image(modifier = Modifier.fillMaxSize(), painter = painterResource(id = image), contentDescription ="" )
             Text(
                 text = text,
                 modifier = modifier.align(Alignment.Center)
