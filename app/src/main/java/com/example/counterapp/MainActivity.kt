@@ -39,7 +39,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.counterapp.ui.theme.CounterAppTheme
+import com.example.counterapp.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CounterAppTheme {
+            AppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     Modifier
@@ -232,7 +232,7 @@ class MainActivity : ComponentActivity() {
     @Preview(showBackground = true)
     @Composable
     fun GreetingPreview() {
-        CounterAppTheme {
+        AppTheme {
             Greeting("Android")
         }
     }

@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Counter App</string>
+    <string name="question">Boiling water is 100 degrees Celsius</string>
+    <string name="question2">Butterflies taste things with their wings</string>
+    <string name="question3">Android is an operating System</string>
+    <string name="question4">Colorblind people can see color</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="trueText">True</string>
+    <string name="falseText">False</string>
+    <string name="next">Next Question</string>
+
+
+
+    <string-array
+        name="questions">
+        <item>Boiling water is 100 degrees Celsius</item>
+        <item>Butterflies taste things with their wings</item>
+        <item>Android is an operating System</item>
+        <item>Colorblind people can see color</item>
+    </string-array>
 </resources>
